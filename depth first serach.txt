@@ -1,0 +1,22 @@
+1.https://practice.geeksforgeeks.org/problems/depth-first-traversal-for-a-graph/1
+
+code:-
+class Solution
+{
+    public boolean visited[];
+    public ArrayList<Integer> solution=new ArrayList<Integer>();
+    public ArrayList<Integer> dfsOfGraph(int V, ArrayList<ArrayList<Integer>> adj)
+    {
+        visited=new boolean[V];
+        dfs(0,adj);
+        return solution;
+    }
+    public void dfs(int resultant,ArrayList<ArrayList<Integer>>adj){
+        visited[resultant]=true;
+        solution.add(resultant);
+        for(int i:adj.get(resultant)){
+            if(visited[i]==false)
+               dfs(i,adj);
+        }
+    }
+}

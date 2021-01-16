@@ -1,0 +1,18 @@
+rearrange the digits
+class Solution:
+    def smallestnum (self,N):
+        lst=[]
+        n=str(N)
+        for i in n:
+            lst.append(i)
+        lst=sorted(lst)
+        x=0
+        for i in range(len(lst)):
+            if(lst[i]=='0'):
+                x+=1
+        y='0'*x
+        for i in range(x):
+            lst.remove('0')
+        lst.insert(1,y)
+        st=""
+        return int(st.join(lst)) 
